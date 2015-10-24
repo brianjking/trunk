@@ -20,3 +20,4 @@ group :development do
 end
 
 gem 'devise', '~> 3.5.0'
+gem 'rails_12factor', group: :production
