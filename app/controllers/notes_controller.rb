@@ -4,8 +4,6 @@ class NotesController < ApplicationController
   respond_to :html
 
   def index
-    @notes = Note.all
-    respond_with(@notes)
   end
 
   def show
