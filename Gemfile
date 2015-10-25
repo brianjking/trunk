@@ -21,3 +21,4 @@ end
 
 gem 'devise', '~> 3.5.0'
 gem 'rails_12factor', group: :production
+gem 'bower-rails', '~> 0.10.0'
