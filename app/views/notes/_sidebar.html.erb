@@ -1,7 +1,15 @@
 <div class="sidebar">
   <% if user_signed_in? %>
     <% current_user.notes.each do |note| %>
-      <%= link_to note_title(note), note_path(note), class: "sidebar-item" %>
+      <%= link_to note_path(note), class: "sidebar-item" do %>
+        <div class="sidebar-item-title">
+          <%= note_title(note) %>
+        </div>
+
+        <div class="sidebar-item-date" title="<%= l note.updated_at, format: :full %>">
+          Last edited: <%= time_ago_in_words(note.updated_at) %> ago
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

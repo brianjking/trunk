@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  date:
+    formats:
+      full: "%B %d, %Y"
+
+  time:
+    formats:
+      full: "%B %d, %Y at %H:%M"
