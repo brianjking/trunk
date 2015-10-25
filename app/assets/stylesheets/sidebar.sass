@@ -4,15 +4,17 @@
   left: 0
   bottom: 0
   width: 300px
-  border-right: 1px solid #ccc
+  border-right: 1px solid $lighter_borders
   overflow: scroll
+  background: #fff
 
   .sidebar-item
     display: block
     color: #000
     text-decoration: none
     padding: 10px
-    border-bottom: 1px solid #ccc
+    background: #fff
+    border-bottom: 1px solid $lighter_borders
     
     .sidebar-item-title
       text-overflow: ellipsis
@@ -20,7 +22,7 @@
       white-space: nowrap
 
     &.active
-      background: #fafafa
+      background: lighten($sidebar_item_bg, 10%)
 
       .sidebar-item-title
         font-weight: bold
