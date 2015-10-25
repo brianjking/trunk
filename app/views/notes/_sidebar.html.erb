@@ -1,7 +1,9 @@
 <div class="sidebar">
   <% if user_signed_in? %>
     <% current_user.notes.each do |note| %>
-      <%= link_to note_path(note), class: "sidebar-item" do %>
+      <%= link_to note_path(note), class: "sidebar-item" +
+        (" active" if params[:id] && note.id.to_s == params[:id]).to_s do
+      %>
         <div class="sidebar-item-title">
           <%= note_title(note) %>
         </div>
