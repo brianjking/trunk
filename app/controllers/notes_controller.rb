@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :get_notes, only: [:index, :show, :edit]
 
   respond_to :html
 
@@ -8,6 +9,12 @@ class NotesController < ApplicationController
 
   def show
     redirect_to edit_note_path(@note)
+  end
+
+  def search
+    keywords = params[:keywords].downcase
+    @notes = current_user.notes.where('LOWER(title) LIKE ?', "%#{keywords}%")
+    render 'index'
   end
 
   def new
@@ -36,11 +43,16 @@ class NotesController < ApplicationController
   end
 
   private
-    def set_note
-      @note = current_user.notes.find(params[:id])
-    end
 
-    def note_params
-      params.require(:note).permit(:title, :content)
-    end
+  def set_note
+    @note = current_user.notes.find(params[:id])
+  end
+
+  def note_params
+    params.require(:note).permit(:title, :content)
+  end
+
+  def get_notes
+    @notes = current_user.notes
+  end
 end
