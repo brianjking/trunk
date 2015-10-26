@@ -21,7 +21,7 @@
 
   <div class="content-actions">
     <% if @note.id.present? %>
-      <%= link_to "Delete Note", note_path(@note), method: :delete, class: "delete", data: {
+      <%= link_to "Delete", note_path(@note), method: :delete, class: "delete", data: {
         confirm: "Are you sure you want to delete \"#{note_title(@note)}\"?"
       } %>
     <% end %>
