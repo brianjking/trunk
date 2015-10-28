@@ -7,6 +7,7 @@
   border-right: 1px solid $lighter_borders
   overflow: scroll
   background: #fff
+  z-index: 2
   
   .sidebar-search
     height: 42px
@@ -48,3 +49,12 @@
       font-size: 12px
       margin: 5px 0 0 0
       color: #555
+
+@media only screen and (max-width: 750px)
+  .sidebar
+    display: none
+    right: 0
+    width: 100%
+
+    &.open
+      display: block
