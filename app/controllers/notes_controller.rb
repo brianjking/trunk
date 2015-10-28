@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  before_action :get_notes, only: [:index, :show, :edit]
+  before_action :get_notes, except: [:search]
 
   respond_to :html
 
