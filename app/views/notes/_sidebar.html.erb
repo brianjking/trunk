@@ -7,9 +7,7 @@
     </div>
 
     <% @notes.each do |note| %>
-      <%= link_to note_path(note), class: "sidebar-item" +
-        (" active" if params[:id] && note.id.to_s == params[:id]).to_s +
-        (" pinned" if note.pinned).to_s do
+      <%= link_to note_path(note), note_link_options(note) do
       %>
         <div class="pin"></div>
 
