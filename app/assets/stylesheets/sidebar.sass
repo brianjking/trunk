@@ -44,6 +44,24 @@
 
       .sidebar-item-title
         font-weight: bold
+  
+    .pin
+      display: none
+      height: 15px
+      width: 15px
+      margin: -5px
+      background: image-url('pin.svg')
+      background-size: 15px 15px
+      float: right
+
+    &:hover .pin
+      display: block
+      opacity: 0.5
+
+    &.pinned
+      .pin
+        display: block
+        opacity: 1
 
     .sidebar-item-date
       font-size: 12px
