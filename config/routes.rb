@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "homepage#index"
-  devise_for :users
+
+  if ENV['ENABLE_SIGNUP']
+    devise_for :users
+  else
+    devise_for :users, controllers: { registrations: "registrations" }
+  end
 
   authenticate :user do
     resources :notes do
