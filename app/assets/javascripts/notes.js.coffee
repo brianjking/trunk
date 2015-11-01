@@ -11,5 +11,15 @@ ready = ->
     # Enable tab close warnings:
     $('form.edit_note').areYouSure()
 
+    # Disable hotkey input protection:
+    jQuery.hotkeys.options.filterInputAcceptingElements = false
+    jQuery.hotkeys.options.filterContentEditable = false
+    jQuery.hotkeys.options.filterTextInputs = false
+
+    # Enable ctrl/cmd+s for saving:
+    $(document).bind 'keydown', 'ctrl+s meta+s', (e) ->
+      e.preventDefault()
+      $('form.edit_note').submit()
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

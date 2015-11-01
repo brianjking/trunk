@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
 //= require are-you-sure
+//= require hotkeys
+//
 //= require_tree .
