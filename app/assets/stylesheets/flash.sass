@@ -1,0 +1,22 @@
+$flash_width: 550px
+
+.flash
+  position: fixed
+  width: $flash_width
+  z-index: 10
+  top: 40px
+  left: 50%
+  margin-left: -($flash_width/2)
+
+  .flash-message
+    background: lighten($header_bg, 20%)
+    border: 1px solid $borders
+    margin-bottom: 10px
+    text-align: center
+    border-radius: 4px
+    padding: 10px
+    font-size: 11px
+    color: #fff
+    text-transform: uppercase
+    font-weight: 600
+    -webkit-font-smoothing: antialiased
