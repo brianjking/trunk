@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  layout 'main_app'
+  
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :get_notes, except: [:search]
 
