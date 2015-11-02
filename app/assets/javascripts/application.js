@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+//= require simplemde
 //= require are-you-sure
 //= require hotkeys
 //
