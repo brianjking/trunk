@@ -1,12 +1,14 @@
 <div class="sidebar">
-  <% if user_signed_in? && @notes.present? %>
+  <% if user_signed_in? %>
     <div class="sidebar-search">
       <%= form_tag search_notes_path, method: :get do %>
         <%= text_field_tag :keywords, params[:keywords], placeholder: "Search..." %>
       <% end %>
     </div>
-
-    <% @notes.each do |note| %>
+    
+    <% notes = @notes.present? ? @notes : current_user.notes %>
+    
+    <% notes.each do |note| %>
       <%= link_to note_path(note), note_link_options(note) do
       %>
         <div class="pin"></div>

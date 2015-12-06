@@ -23,7 +23,9 @@ en:
   date:
     formats:
       full: "%B %d, %Y"
+      computer: "%F"
 
   time:
     formats:
       full: "%B %d, %Y at %H:%M"
+      computer: "%FT%R"

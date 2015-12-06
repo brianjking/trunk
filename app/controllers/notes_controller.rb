@@ -2,9 +2,6 @@ class NotesController < ApplicationController
   layout 'main_app'
   
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  before_action :get_notes, except: [:search]
-
-  respond_to :html
 
   def index
   end
@@ -57,9 +54,5 @@ class NotesController < ApplicationController
 
   def note_params
     params.require(:note).permit(:title, :content, :pinned)
-  end
-
-  def get_notes
-    @notes = current_user.notes
   end
 end
