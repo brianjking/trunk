@@ -10,7 +10,12 @@ class NotesController < ApplicationController
   end
 
   def show
-    redirect_to edit_note_path(@note)
+    respond_to do |format|
+      format.json
+      format.html {
+        redirect_to edit_note_path(@note)
+      }
+    end
   end
 
   def search

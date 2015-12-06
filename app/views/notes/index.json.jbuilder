@@ -1,7 +1,1 @@
-json.array! @notes do |note|
-  json.title note.title
-  json.content note.content
-  json.pinned note.pinned
-  json.created_at note.created_at
-  json.updated_at note.updated_at
-end
+json.partial! 'note', collection: @notes, as: :note
