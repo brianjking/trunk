@@ -1,1 +1,1 @@
-json.partial! 'note', note: @note
+json.partial! 'note', note: @note, show_content: true
