@@ -44,6 +44,7 @@
 
       @media only screen and (max-width: 750px)
         left: 0
+        top: 178px
 
   .content-actions
     position: fixed
@@ -51,6 +52,15 @@
     height: 40px
     top: 98px
     padding: 3px
+
+    @media only screen and (max-width: 750px)
+      left: 0
+      right: 0
+      top: 139px
+      background: #fff
+      border-top: 1px solid $lighter_borders
+      border-bottom: 1px solid $lighter_borders
+      display: flex
 
     input[type="submit"], a.delete
       display: block
@@ -79,6 +89,10 @@
 
         &:hover
           background: #BB7577
+
+      @media only screen and (max-width: 750px)
+        flex: 1
+        text-align: center
 
 @media only screen and (max-width: 750px)
   .content
