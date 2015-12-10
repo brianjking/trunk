@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   layout 'main_app'
+  respond_to :html
   
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
