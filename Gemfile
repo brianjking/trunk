@@ -14,10 +14,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
   gem 'spring'
-  gem 'pry-byebug'
   gem 'xray-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'pry-byebug'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.4'
 end
 
 gem 'devise', '~> 3.5.0'
