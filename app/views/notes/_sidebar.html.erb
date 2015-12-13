@@ -1,4 +1,4 @@
-<div class="sidebar open">
+<div class="sidebar <% if params[:action] == 'index' %>open<% end %>">
   <% if user_signed_in? %>
     <div class="sidebar-search">
       <%= form_tag search_notes_path, method: :get do %>
