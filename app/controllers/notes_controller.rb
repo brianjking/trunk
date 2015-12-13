@@ -44,7 +44,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-    respond_with(@note)
+    redirect_to notes_path
   end
 
   private

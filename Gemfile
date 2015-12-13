@@ -29,3 +29,4 @@ end
 gem 'devise', '~> 3.5.0'
 gem 'simple_token_authentication', '~> 1.0'
 gem 'rails_12factor', group: :production
+gem 'paranoia', '~> 2.0'

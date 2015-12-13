@@ -1,4 +1,5 @@
 class Note < ActiveRecord::Base
+  acts_as_paranoid
   belongs_to :user
 
   default_scope -> { order(pinned: :desc, updated_at: :desc) }
