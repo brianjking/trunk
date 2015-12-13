@@ -1,29 +1,23 @@
 <div class="header">
-  <div class="header-left">
-    <% unless params[:action] == 'index' %>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    <% end %>
+  <% unless params[:action] == 'index' %>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  <% end %>
 
-    <h1><%= link_to "Trunk", root_path %></h1>
-    
-    <% if user_signed_in? %>
-      <%= link_to "New Note", new_note_path, class: 'nav-link' %>
-    <% end %>
-  </div>
+  <h1><%= link_to "Trunk", root_path %></h1>
+  
+  <% if user_signed_in? %>
+    <%= link_to "New Note", new_note_path, class: 'header-newnote' %>
+  <% end %>
 
-  <div class="header-right">
-    <% if user_signed_in? %>
-      <%= link_to "Settings", edit_user_registration_path %>
-      &nbsp;&nbsp;
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Login", new_user_session_path %>
-      &nbsp;&nbsp;
-      <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <%= link_to "Settings", edit_user_registration_path %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
 </div>

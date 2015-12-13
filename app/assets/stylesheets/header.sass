@@ -6,6 +6,8 @@
   height: 50px
   background: $header_bg
   border-bottom: 1px solid $borders
+  display: flex
+  align-items: center
   
   .hamburger
     display: none
@@ -26,31 +28,28 @@
 
   a
     color: #fff
-
-  .header-left
-    float: left
-
-    h1
-      float: left
-      font-weight: bold
-      padding: 15px 0 0 10px
-      width: 300px
-      font-family: "Avenir", sans-serif
-      font-size: 25px
-
+    margin-right: 10px
+    
+    &.header-newnote
       @media only screen and (max-width: 750px)
-        width: auto
+        margin-left: auto
 
-      a
-        text-decoration: none
+      @media only screen and (min-width: 751px)
+        margin-right: auto
 
-    a.nav-link
-      float: left
-      margin: 17px 10px 0 10px
+  h1
+    float: left
+    font-weight: bold
+    width: 300px
+    font-family: "Avenir", sans-serif
+    font-size: 25px
+    margin-left: 10px
 
-  .header-right
-    float: right
-    padding: 17px 10px 0 10px
+    @media only screen and (max-width: 750px)
+      width: auto
+
+    a
+      text-decoration: none
 
 @media only screen and (max-width: 750px)
   .header
