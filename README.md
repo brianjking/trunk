@@ -1,5 +1,7 @@
 # Trunk
 
+[![Build Status](https://travis-ci.org/timdavies/trunk.svg?branch=master)](https://travis-ci.org/timdavies/trunk)
+
 Trunk is a simple, web-based notes app.
 
 ![Trunk Screenshot](http://i.imgur.com/4GCQ1pr.png)
