@@ -47,6 +47,15 @@ class NotesController < ApplicationController
     redirect_to notes_path
   end
 
+  def archive
+  end
+
+  def restore
+    note = current_user.notes.deleted.find(params[:id])
+    note.restore
+    redirect_to notes_path(note.id)
+  end
+
   private
 
   def set_note

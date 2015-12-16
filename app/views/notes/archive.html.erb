@@ -1,0 +1,29 @@
+<div class="note-archive">
+  <h1>Deleted Notes</h1>
+  
+  <ul>
+    <li class="note-archive-list-header">
+      <div class="note-title">&nbsp;</div>
+      <div class="note-deleted-at">
+        Deleted at
+      </div>
+      <div class="note-restore">&nbsp;</div>
+    </li>
+
+    <% current_user.notes.deleted.each do |note| %>
+      <li>
+        <div class="note-title">
+          <%= note.title %>
+        </div>
+
+        <div class="note-deleted-at">
+          <%= l note.deleted_at, format: :full %>
+        </div>
+
+        <div class="note-restore">
+          <%= link_to "Restore", note_restore_path(note.id), method: :post %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

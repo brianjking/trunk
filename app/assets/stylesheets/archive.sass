@@ -1,0 +1,30 @@
+.note-archive
+  padding: 30px
+
+  h1
+    font-size: 20px
+    margin-bottom: 20px
+
+  ul
+    border-top: 1px solid #ddd
+
+    li
+      display: flex
+      border-bottom: 1px solid #ddd
+      padding: 10px
+
+      .note-title
+        flex: 2
+
+      .note-deleted-at
+        flex: 1
+        text-align: right
+
+      .note-restore
+        flex: 1
+        text-align: right
+
+      &.note-archive-list-header
+        color: #666
+        text-transform: uppercase
+        font-size: 12px
