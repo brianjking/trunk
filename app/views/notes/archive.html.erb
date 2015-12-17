@@ -1,32 +1,38 @@
-<div class="note-archive">
-  <h1>Archived Notes</h1>
-  
-  <ul>
-    <li class="note-archive-list-header">
-      <div class="note-title">&nbsp;</div>
-      <div class="note-archived-at">
-        Archived at
-      </div>
-      <div class="note-actions">&nbsp;</div>
-    </li>
+<% if current_user.notes.deleted.any? %>
+  <div class="note-archive">
+    <h1>Archived Notes</h1>
 
-    <% current_user.notes.deleted.each do |note| %>
-      <li>
-        <div class="note-title">
-          <%= note.title %>
-        </div>
-
+    <ul>
+      <li class="note-archive-list-header">
+        <div class="note-title">&nbsp;</div>
         <div class="note-archived-at">
-          <%= l note.deleted_at, format: :full %>
+          Archived at
         </div>
-
-        <div class="note-actions">
-          <%= link_to "Restore", restore_notes_path(note.id), method: :post %>
-          <%= link_to "Delete", note_path(note.id), method: :delete,
-            data: { confirm: "This action cannot be undone. Are you sure you wish to delete this note?" }
-          %>
-        </div>
+        <div class="note-actions">&nbsp;</div>
       </li>
-    <% end %>
-  </ul>
-</div>
+
+      <% current_user.notes.deleted.each do |note| %>
+        <li>
+          <div class="note-title">
+            <%= note.title %>
+          </div>
+
+          <div class="note-archived-at">
+            <%= l note.deleted_at, format: :full %>
+          </div>
+
+          <div class="note-actions">
+            <%= link_to "Restore", restore_notes_path(note.id), method: :post %>
+            <%= link_to "Delete", note_path(note.id), method: :delete,
+              data: { confirm: "This action cannot be undone. Are you sure you wish to delete this note?" }
+            %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="note-archive note-archive-empty">
+    <div>No archived notes</div>
+  </div>
+<% end %>
