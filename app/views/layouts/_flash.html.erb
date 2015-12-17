@@ -2,7 +2,7 @@
   <div class="flash">
     <% flash.each do |key, message| %>
       <div class="flash-message flash-message-<%= key %>">
-        <%= message %>
+        <%= raw message %>
       </div>
     <% end %>
   </div>

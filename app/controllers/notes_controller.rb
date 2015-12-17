@@ -44,6 +44,8 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
+    flash[:info] = "Note has been archived. " +
+      view_context.link_to("Undo?", restore_notes_path(@note.id), method: :post)
     redirect_to notes_path
   end
 
