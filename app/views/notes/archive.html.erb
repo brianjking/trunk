@@ -4,10 +4,10 @@
   <ul>
     <li class="note-archive-list-header">
       <div class="note-title">&nbsp;</div>
-      <div class="note-deleted-at">
-        Deleted at
+      <div class="note-archived-at">
+        Archived at
       </div>
-      <div class="note-restore">&nbsp;</div>
+      <div class="note-actions">&nbsp;</div>
     </li>
 
     <% current_user.notes.deleted.each do |note| %>
@@ -16,12 +16,15 @@
           <%= note.title %>
         </div>
 
-        <div class="note-deleted-at">
+        <div class="note-archived-at">
           <%= l note.deleted_at, format: :full %>
         </div>
 
-        <div class="note-restore">
+        <div class="note-actions">
           <%= link_to "Restore", restore_notes_path(note.id), method: :post %>
+          <%= link_to "Delete", note_path(note.id), method: :delete,
+            data: { confirm: "This action cannot be undone. Are you sure you wish to delete this note?" }
+          %>
         </div>
       </li>
     <% end %>

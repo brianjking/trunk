@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   layout 'main_app'
   respond_to :html
   
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_note, only: [:show, :edit, :update]
 
   def index
   end
@@ -43,10 +43,19 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note.destroy
-    flash[:info] = "Note has been archived. " +
-      view_context.link_to("Undo?", restore_notes_path(@note.id), method: :post)
-    redirect_to notes_path
+    note = current_user.notes.with_deleted.find(params[:id])
+
+    if note.deleted_at
+      note.really_destroy!
+      flash[:info] = "Note has been deleted"
+      redirect_to archive_notes_path
+    else
+      note.destroy
+      flash[:info] = "Note has been archived. " + view_context.link_to(
+        "Undo?", restore_notes_path(note.id), method: :post
+      )
+      redirect_to notes_path
+    end
   end
 
   def archive
