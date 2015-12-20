@@ -21,8 +21,11 @@ as required, or create your own `database.yml` config from scratch.
 
 By default Trunk does not allow users to sign up from the web interface. To
 enable this, set an environmental variable `ENABLE_SIGNUP` to true and restart.
-If you do not want to allow any other users to sign up you should remove this
-environmental variable once your user is created.
+
+If you do not wish to enable registration, you should use the built in rake task
+to create a user:
+
+    rake users:create
 
 ## Development
 
