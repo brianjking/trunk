@@ -1,7 +1,7 @@
 class Note < ActiveRecord::Base
   acts_as_paranoid
   belongs_to :user
-  has_many :content
+  belongs_to :content
 
   default_scope -> { order(pinned: :desc, updated_at: :desc) }
 

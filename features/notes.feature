@@ -15,3 +15,15 @@ Feature: Notes
     And I click "Update Note"
     Then the content of note "Hello, World" should be "This is an updated note"
     And I should be on the note page for "Hello, World"
+
+  Scenario: Use the JSON API to list all notes
+    Given I am logged in
+    And I have a note called "Hello, World"
+    And I am on the notes page, requesting JSON
+    Then I should see a note called "Hello, World"
+  
+  Scenario: Use the JSON API to view a note
+    Given I am logged in
+    And I have a note called "Hello, World"
+    And I am on the note page for "Hello, World", requesting JSON
+    Then I should see a note called "Hello, World"

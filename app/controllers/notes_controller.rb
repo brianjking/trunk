@@ -34,11 +34,28 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     @note.save
+
+    content = Content.create(
+      note_id: @note.id,
+      text_content: params[:note][:content],
+      content_type: :text,
+    )
+
+    @note.update_attribute(:content_id, content.id)
     respond_with(@note)
   end
 
   def update
+    # Create new content object:
+    new_content = Content.create(
+      note_id: @note.id,
+      text_content: params[:note][:content],
+      content_type: :text,
+    )
+
     @note.update(note_params)
+    @note.update_attribute(:content_id, new_content.id)
+    
     respond_with(@note)
   end
 
@@ -74,6 +91,6 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:title, :content, :pinned)
+    params.require(:note).permit(:title, :pinned)
   end
 end

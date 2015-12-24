@@ -2,6 +2,15 @@ Given(/^I am on the notes page$/) do
   visit notes_path
 end
 
+Given(/^I am on the notes page, requesting JSON$/) do
+  visit notes_path(format: :json)
+end
+
+Given(/^I am on the note page for "(.*?)", requesting JSON$/) do |note_title|
+  note = Note.find_by(title: note_title)
+  visit note_path(id: note.id, format: :json)
+end
+
 Given(/^I click "(.*?)"$/) do |text|
   click_on text
 end
@@ -12,10 +21,6 @@ end
 
 Given(/^I fill in the note content with "(.*?)"$/) do |note_content|
   fill_in "note_content", with: note_content
-end
-
-Then(/^the note "(.*?)" should have been created$/) do |note_title|
-  expect(Note.where(title: note_title).count).to eq(1)
 end
 
 Then(/^there should be (\d+) note/) do |note_count|
@@ -29,5 +34,20 @@ end
 
 Then(/^the content of note "(.*?)" should be "(.*?)"$/) do |title, content|
   note = Note.find_by(title: title)
-  assert note.content == content
+  assert note.content.to_s == content
+end
+
+Given(/^I have a note called "(.*?)"$/) do |note_title|
+  note = User.first.notes.create(title: note_title)
+  content = Content.create(
+    note_id: note.id,
+    text_content: "Content goes here",
+    content_type: :text
+  )
+  note.content_id = content.id
+  note.save
+end
+
+Then(/^I should see a note called "(.*?)"$/) do |note_title|
+  assert(page.has_content?(note_title), "Could not find note title")
 end

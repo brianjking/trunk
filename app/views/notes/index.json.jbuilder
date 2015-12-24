@@ -1,1 +1,1 @@
-json.partial! 'note', collection: @notes, as: :note
+json.partial! 'note', collection: current_user.notes, as: :note
