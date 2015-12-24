@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   layout 'main_app'
   respond_to :html
   
-  before_action :set_note, only: [:show, :edit, :update]
+  before_action :set_note, only: [:show, :edit, :update, :history]
 
   def index
   end
@@ -84,10 +84,18 @@ class NotesController < ApplicationController
     redirect_to note
   end
 
+  def history
+    @history = Content.where(note_id: @note.id).order(created_at: :desc)
+  end
+
   private
 
   def set_note
-    @note = current_user.notes.find(params[:id])
+    @note = current_user.notes.find(params[:id] || params[:note_id])
+
+    if params[:version]
+      @note.content = Content.find_by(id: params[:version], note_id: @note.id)
+    end
   end
 
   def note_params

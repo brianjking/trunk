@@ -21,6 +21,7 @@
 
   <div class="content-actions">
     <% if @note.id.present? %>
+      <%= link_to "Note History", note_history_path(@note), class: "history" %>
       <%= link_to "Archive", note_path(@note), method: :delete, class: "delete" %>
     <% end %>
     

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get 'search', on: :collection
       get 'archive', on: :collection
       post 'restore/:id', to: 'notes#restore', on: :collection, as: :restore
+
+      get 'history'
     end
   end
 end

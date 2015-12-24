@@ -1,0 +1,13 @@
+<div class="note-settings">
+  <h1>Note History</h1>
+
+  <% @history.each do |version| %>
+    <div class="history-item">
+      <%= link_to l(version.created_at, format: :full), edit_note_path(id: @note.id, version: version.id) %>
+      
+      <% if @note.content == version %>
+        <strong>(current)</strong>
+      <% end %>
+    </div>
+  <% end %>
+</div>

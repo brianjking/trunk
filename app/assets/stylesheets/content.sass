@@ -62,8 +62,16 @@
       border-top: 1px solid $lighter_borders
       border-bottom: 1px solid $lighter_borders
       display: flex
+    
+    a.history
+      float: left
+      margin: 7px 20px 0 0
+
+      @media only screen and (max-width: 750px)
+        display: none
 
     input[type="submit"], a.delete
+      float: left
       display: block
       border: 0
       padding: 6px 25px

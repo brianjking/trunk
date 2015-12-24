@@ -1,5 +1,5 @@
 <% if current_user.notes.deleted.any? %>
-  <div class="note-archive">
+  <div class="note-settings">
     <h1>Archived Notes</h1>
 
     <ul>
@@ -32,7 +32,7 @@
     </ul>
   </div>
 <% else %>
-  <div class="note-archive note-archive-empty">
+  <div class="note-settings note-archive-empty">
     <div>No archived notes</div>
   </div>
 <% end %>
