@@ -31,3 +31,4 @@ gem 'simple_token_authentication', '~> 1.0'
 gem 'rails_12factor', group: :production
 gem 'paranoia', '~> 2.0'
 gem 'autoprefixer-rails'
+gem 'font-awesome-rails'

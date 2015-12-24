@@ -3,6 +3,7 @@ ready = ->
     # Set up markdown editor:
     textarea = $('.content-body textarea')[0]
     simplemde = new SimpleMDE({
+      autoDownloadFontAwesome: false,
       element: textarea,
       spellChecker: false,
       toolbar: SimpleMDE.toolbar.slice(0, SimpleMDE.toolbar.length - 5)
