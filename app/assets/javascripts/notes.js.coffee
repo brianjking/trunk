@@ -9,6 +9,10 @@ ready = ->
       toolbar: SimpleMDE.toolbar.slice(0, SimpleMDE.toolbar.length - 5)
     })
 
+    # Save any changes to the textarea (this is for the tab close warnings):
+    simplemde.codemirror.on 'change', ->
+      simplemde.element.textContent = simplemde.value()
+
     # Enable tab close warnings:
     $('form.edit_note').areYouSure()
 
