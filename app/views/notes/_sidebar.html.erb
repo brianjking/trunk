@@ -1,11 +1,5 @@
 <div class="sidebar <% if params[:action] == 'index' %>open<% end %>">
   <% if user_signed_in? %>
-    <div class="sidebar-search">
-      <%= form_tag search_notes_path, method: :get do %>
-        <%= text_field_tag :keywords, params[:keywords], placeholder: "Search..." %>
-      <% end %>
-    </div>
-    
     <% notes = @notes.present? ? @notes : current_user.notes %>
     
     <% notes.each do |note| %>

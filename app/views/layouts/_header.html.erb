@@ -10,6 +10,12 @@
   <h1><%= link_to "Trunk", root_path %></h1>
   
   <% if user_signed_in? %>
+    <div class="header-search">
+      <%= form_tag search_notes_path, method: :get do %>
+        <%= text_field_tag :keywords, params[:keywords], placeholder: "Search..." %>
+      <% end %>
+    </div>
+
     <%= link_to "New Note", new_note_path, class: 'header-newnote' %>
   <% end %>
 
