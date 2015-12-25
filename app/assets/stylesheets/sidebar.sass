@@ -1,19 +1,23 @@
 .sidebar
   position: fixed
-  top: 50px
-  left: 0
+  top: $header_height
+  left: $thin_nav_width
   bottom: 0
-  width: 300px
+  width: $sidebar_width
   border-right: 1px solid $sidebar_borders
   overflow: scroll
   background: $sidebar_bg
   z-index: 2
   -webkit-overflow-scrolling: touch
+
+  @media only screen and (max-width: 750px)
+    left: 0
   
   .sidebar-search
     height: 42px
     background: #fafafa
     border-bottom: 1px solid $sidebar_borders
+    display: none
 
     form
       width: 100%
