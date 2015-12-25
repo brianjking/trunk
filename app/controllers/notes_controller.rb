@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   respond_to :html
   
   before_action :set_note, only: [:show, :edit, :update, :history]
+  before_action :set_active_section, except: :archive
 
   def index
   end
@@ -76,6 +77,7 @@ class NotesController < ApplicationController
   end
 
   def archive
+    @active_section = :archive
   end
 
   def restore
@@ -90,6 +92,10 @@ class NotesController < ApplicationController
 
   private
 
+  def set_active_section
+    @active_section = :notes
+  end
+  
   def set_note
     @note = current_user.notes.find(params[:id] || params[:note_id])
 
