@@ -6,7 +6,8 @@ ready = ->
       autoDownloadFontAwesome: false,
       element: textarea,
       spellChecker: false,
-      toolbar: SimpleMDE.toolbar.slice(0, SimpleMDE.toolbar.length - 5)
+      toolbar: SimpleMDE.toolbar.slice(0, SimpleMDE.toolbar.length - 5),
+      autofocus: true
     })
 
     # Save any changes to the textarea (this is for the tab close warnings):
