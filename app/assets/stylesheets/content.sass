@@ -11,17 +11,19 @@
   
   .content-title
     border-bottom: 1px solid $lighter_borders
-    
+    margin: 30px 34px 0 34px
+    border-bottom: 1px solid #e1e1e1
+
     input
       width: 100%
       border: 0
-      padding: 10px
       font-size: 18px
       outline: none
+      padding: 10px 280px 10px 15px
 
   .content-body
     position: fixed
-    top: 50 + 42px
+    top: 145px
     bottom: 0px
     right: 0
     left: $thin_nav_width + $sidebar_width
@@ -30,18 +32,21 @@
       left: 0
     
     .editor-toolbar
-      border: 0
       height: 48px !important
+      border: 0
+      margin: -20px 20px 0 20px
+      z-index: 10
+      padding: 0 20px
 
     .CodeMirror
       position: fixed
       border: 0
-      border-top: 1px solid $lighter_borders
       top: 145px
       bottom: 0px
       left: $thin_nav_width + $sidebar_width
       right: 0
       -webkit-overflow-scrolling: touch
+      padding: 30px 45px
 
       @media only screen and (max-width: 750px)
         left: 0
@@ -49,9 +54,9 @@
 
   .content-actions
     position: fixed
-    right: 5px
+    right: 27px
     height: 40px
-    top: 98px
+    top: 80px
     padding: 3px
 
     @media only screen and (max-width: 750px)
@@ -66,6 +71,9 @@
     a.history
       float: left
       margin: 7px 20px 0 0
+      font-size: 19px
+      color: #555
+      text-decoration: none
 
       @media only screen and (max-width: 750px)
         display: none
@@ -102,6 +110,9 @@
       @media only screen and (max-width: 750px)
         flex: 1
         text-align: center
+
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar
+  display: none !important
 
 @media only screen and (max-width: 750px)
   .content
