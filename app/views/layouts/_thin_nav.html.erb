@@ -1,3 +1,22 @@
-<div class="thin-nav">
+<ul class="thin-nav">
+  <li>
+    <%= link_to notes_path do %>
+      <i class="fa fa-sticky-note"></i>
+      <span class="desc">Notes</span>
+    <% end %>
+  </li>
   
-</div>
+  <li>
+    <%= link_to archive_notes_path do %>
+      <i class="fa fa-archive"></i>
+      <span class="desc">Archive</span>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to edit_user_registration_path do %>
+      <i class="fa fa-cog"></i>
+      <span class="desc">Settings</span>
+    <% end %>
+  </li>
+</ul>
