@@ -7,12 +7,16 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contacts = Contact.all
-    respond_with(@contacts)
+    @contacts = current_user.contacts
   end
 
   def show
-    respond_with(@contact)
+    respond_to do |format|
+      format.json
+      format.html {
+        redirect_to edit_contact_path(@contact)
+      }
+    end
   end
 
   def new
@@ -50,10 +54,10 @@ class ContactsController < ApplicationController
   end
 
   def set_contact
-    @contact = Contact.find(params[:id])
+    @contact = current_user.contacts.find(params[:id])
   end
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :company_name, :fields)
+    params.require(:contact).permit(:first_name, :last_name, :company_name, :fields, :notes)
   end
 end

@@ -10,23 +10,39 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="name-fields">
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+  </div>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :company_name %><br>
+    <%= f.label :company_name %>
     <%= f.text_field :company_name %>
   </div>
-  <div class="field">
-    <%= f.label :fields %><br>
+
+  <div class="field" style="display: none">
+    <%= f.label :fields %>
     <%= f.text_area :fields %>
   </div>
+
+  <div class="field">
+    <label>Details:</label><br>
+    <div class="fields-wrapper" id="fields_wrapper"></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
