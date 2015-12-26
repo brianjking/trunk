@@ -9,6 +9,7 @@
   align-items: center
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
   z-index: 10
+  padding-right: 10px
   
   .hamburger
     display: none
@@ -29,20 +30,20 @@
 
   a
     color: #fff
-    margin-right: 10px
+    margin-left: 10px
+    text-decoration: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5)
     
-    &.header-newnote
-      padding: 0 10px
-      
-      @media only screen and (max-width: 750px)
-        margin-left: auto
+  .header-lastleft
+    @media only screen and (max-width: 750px)
+      margin-left: auto
 
-      @media only screen and (min-width: 751px)
-        margin-right: auto
+    @media only screen and (min-width: 751px)
+      margin-right: auto
 
-    &.header-archive
-      @media only screen and (max-width: 750px)
-        display: none
+  .header-archive
+    @media only screen and (max-width: 750px)
+      display: none
 
   h1
     float: left
@@ -50,14 +51,14 @@
     width: $thin_nav_width
     font-family: "Avenir", sans-serif
     font-size: 25px
-    padding-left: 10px
     text-align: center
 
     @media only screen and (max-width: 750px)
       width: auto
 
     a
-      text-decoration: none
+      margin: 0
+      border: 0
 
   .header-search
     height: 30px
@@ -91,10 +92,6 @@
       *:-ms-input-placeholder
         color: #fff
         opacity: 0.6
-
-@media only screen and (min-width: 751px)
-  .header-archive, .header-settings
-    display: none
 
 @media only screen and (max-width: 750px)
   .header

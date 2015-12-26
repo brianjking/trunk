@@ -1,0 +1,26 @@
+<div class="sidebar <% if params[:action] == 'index' %>open<% end %>">
+  <% if user_signed_in? %>
+    <% contacts = @contacts.present? ? @contacts : current_user.contacts %>
+    
+    <% if contacts.present? %>
+      <% contacts.each do |contact| %>
+        <%= link_to contact_path(contact), contact_link_options(contact) do
+        %>
+          <div class="pin"></div>
+
+          <div class="sidebar-item-title" title="<%= contact_name(contact) %>">
+            <%= contact_name(contact) %>
+          </div>
+
+          <div class="sidebar-item-date" title="<%= l contact.updated_at, format: :full %>">
+            Last edited: <%= time_ago_in_words(contact.updated_at) %> ago
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+      <div class="empty">
+        <div>No contacts</div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

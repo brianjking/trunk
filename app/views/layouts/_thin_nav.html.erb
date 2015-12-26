@@ -5,18 +5,11 @@
       <span class="desc">Notes</span>
     <% end %>
   </li>
-  
-  <li <% if @active_section == :archive %>class="active"<% end %>>
-    <%= link_to archive_notes_path do %>
-      <i class="fa fa-archive"></i>
-      <span class="desc">Archive</span>
-    <% end %>
-  </li>
 
-  <li <% if @active_section == :settings %>class="active"<% end %>>
-    <%= link_to edit_user_registration_path do %>
-      <i class="fa fa-cog"></i>
-      <span class="desc">Settings</span>
+  <li <% if @active_section == :contacts %>class="active"<% end %>>
+    <%= link_to contacts_path do %>
+      <i class="fa fa-users"></i>
+      <span class="desc">Contacts</span>
     <% end %>
   </li>
 </ul>

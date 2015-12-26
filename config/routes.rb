@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
       get 'history'
     end
+
+    resources :contacts
   end
 end
