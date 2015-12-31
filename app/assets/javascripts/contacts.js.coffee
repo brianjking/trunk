@@ -3,10 +3,16 @@ renderFields = ->
   fields = $('#contact_fields').val() || JSON.stringify({ home: "", phone: "", email: "" })
   fields = JSON.parse(fields)
 
-  # Render each field:
-  $('#fields_wrapper').html(HandlebarsTemplates['contact_fields']({
-    fields: fields
-  }))
+  # Add empty field:
+  fields["test"] = "foo"
+
+  for a, b in fields
+    console.log "here"
+
+    $('#fields_wrapper').append(HandlebarsTemplates['contact_field']({
+      key: "foo",
+      value: "bar"
+    }))
 
 writeContactFieldsToInput = ->
   console.log "foo"
@@ -19,7 +25,6 @@ $ ->
 
   $(document).on 'click', '.contact-button-add', (e) ->
     e.preventDefault()
-
 
   $(document).on 'keyup', '.contact-field input', (e) ->
     e.preventDefault()
