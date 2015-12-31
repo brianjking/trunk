@@ -10,9 +10,11 @@
     left: 0
   
   .content-title
-    border-bottom: 1px solid $lighter_borders
     margin: 30px 34px 0 34px
     border-bottom: 1px solid #e1e1e1
+
+    @media only screen and (max-width: 750px)
+      margin: 0
 
     input
       width: 100%
@@ -20,6 +22,9 @@
       font-size: 18px
       outline: none
       padding: 10px 280px 10px 15px
+
+      @media only screen and (max-width: 750px)
+        padding-right: 15px
 
   .content-body
     position: fixed
@@ -38,6 +43,9 @@
       z-index: 10
       padding: 0 20px
 
+      @media only screen and (max-width: 750px)
+        margin-top: -10px
+
     .CodeMirror
       position: fixed
       border: 0
@@ -50,7 +58,7 @@
 
       @media only screen and (max-width: 750px)
         left: 0
-        top: 178px
+        top: 150px
 
   .content-actions
     position: fixed
@@ -62,10 +70,10 @@
     @media only screen and (max-width: 750px)
       left: 0
       right: 0
-      top: 139px
+      top: 91px
       background: #fff
-      border-top: 1px solid $lighter_borders
-      border-bottom: 1px solid $lighter_borders
+      border-top: 1px solid #e1e1e1
+      border-bottom: 1px solid #e1e1e1
       display: flex
     
     a.history
