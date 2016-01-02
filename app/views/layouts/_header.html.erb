@@ -17,7 +17,7 @@
     </div>
     
     <% if @active_section == :notes %>
-      <%= link_to "New Note", new_note_path %>
+      <%= link_to "New Note", new_note_path, class: 'header-newnote' %>
       <%= link_to "Archives", archive_notes_path, class: 'header-lastleft' %>
     <% elsif @active_section == :contacts %>
       <%= link_to "New Contact", new_contact_path, class: 'header-lastleft' %>
