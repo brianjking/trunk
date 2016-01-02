@@ -9,9 +9,20 @@
   background: $sidebar_bg
   z-index: 2
   -webkit-overflow-scrolling: touch
-
+  
   @media only screen and (max-width: 750px)
     left: 0
+  
+  .empty
+    display: flex
+    align-items: center
+    height: 100%
+
+    div
+      flex: 1
+      text-align: center
+      font-size: 22px
+      color: darken($sidebar_bg, 30%)
 
   .sidebar-item
     display: block

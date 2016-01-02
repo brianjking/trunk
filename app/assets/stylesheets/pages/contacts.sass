@@ -1,0 +1,68 @@
+.new-contact
+  width: 700px
+  border: 1px solid #dadada
+  margin: 30px auto
+  padding: 30px 50px
+  background: #fafafa
+  border-radius: 4px
+
+  h1
+    font-size: 22px
+    margin-bottom: 40px
+  
+  label
+    display: block
+    margin-bottom: 5px
+    font-weight: 600
+    text-transform: uppercase
+    font-size: 12px
+
+  input[type='text'], textarea
+    border: 1px solid $input_borders
+    padding: 5px
+    font-size: 18px
+    margin-bottom: 20px
+    width: 100%
+
+  .field
+    margin-bottom: 20px
+
+  textarea
+    font-size: 16px
+    height: 120px
+
+  .name-fields
+    display: flex
+
+    .field
+      flex: 1
+      margin-left: 5px
+
+      &:first-child
+        margin-left: 0
+        margin-right: 5px
+
+  .contact-field
+    display: flex
+    align-items: baseline
+
+    .contact-field-key
+      flex: 1
+      margin-right: 10px
+
+      input
+        text-align: right
+
+    .contact-field-value
+      flex: 2
+
+    .contact-button
+      width: 20px
+      text-align: right
+      text-decoration: none
+
+      &.contact-button-remove
+        color: #E05F5F
+
+      &.contact-button-add
+        color: #56D856

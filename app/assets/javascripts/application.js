@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+//= require handlebars.runtime
+//= require_tree ./templates
+//
 //= require simplemde
 //= require are-you-sure
 //= require hotkeys

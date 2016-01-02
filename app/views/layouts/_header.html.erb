@@ -15,12 +15,20 @@
         <%= text_field_tag :keywords, params[:keywords], placeholder: "Search..." %>
       <% end %>
     </div>
-
-    <%= link_to "New Note", new_note_path, class: 'header-newnote' %>
+    
+    <% if @active_section == :notes %>
+      <%= link_to "New Note", new_note_path %>
+      <%= link_to "Archives", archive_notes_path, class: 'header-lastleft' %>
+    <% elsif @active_section == :contacts %>
+      <%= link_to "New Contact", new_contact_path, class: 'header-lastleft' %>
+    <% else %>
+      <div class="header-lastleft">&nbsp;</div>
+    <% end %>
+  <% else %>
+    <div class="header-lastleft">&nbsp;</div>
   <% end %>
 
   <% if user_signed_in? %>
-    <%= link_to "Archive", archive_notes_path, class: 'header-archive' %>
     <%= link_to "Settings", edit_user_registration_path, class: 'header-settings' %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <% else %>

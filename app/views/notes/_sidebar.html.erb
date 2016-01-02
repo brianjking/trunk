@@ -2,19 +2,25 @@
   <% if user_signed_in? %>
     <% notes = @notes.present? ? @notes : current_user.notes %>
     
-    <% notes.each do |note| %>
-      <%= link_to note_path(note), note_link_options(note) do
-      %>
-        <div class="pin"></div>
+    <% if notes.present? %>
+      <% notes.each do |note| %>
+        <%= link_to note_path(note), note_link_options(note) do
+        %>
+          <div class="pin"></div>
 
-        <div class="sidebar-item-title" title="<%= note_title(note) %>">
-          <%= note_title(note) %>
-        </div>
+          <div class="sidebar-item-title" title="<%= note_title(note) %>">
+            <%= note_title(note) %>
+          </div>
 
-        <div class="sidebar-item-date" title="<%= l note.updated_at, format: :full %>">
-          Last edited: <%= time_ago_in_words(note.updated_at) %> ago
-        </div>
+          <div class="sidebar-item-date" title="<%= l note.updated_at, format: :full %>">
+            Last edited: <%= time_ago_in_words(note.updated_at) %> ago
+          </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="empty">
+        <div>No notes</div>
+      </div>
     <% end %>
   <% end %>
 </div>

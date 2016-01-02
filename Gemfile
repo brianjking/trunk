@@ -32,3 +32,4 @@ gem 'rails_12factor', group: :production
 gem 'paranoia', '~> 2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
+gem 'handlebars_assets'

@@ -19,7 +19,8 @@
     <%= render 'layouts/flash' %>
     <%= render 'layouts/header' %>
     <%= render 'layouts/thin_nav' %>
-    <%= render 'notes/sidebar' %>
+
+    <%= render @sidebar_view || 'notes/sidebar' %>
     
     <div class="content">
       <%= yield %>
