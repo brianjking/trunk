@@ -4,7 +4,7 @@
 
 Trunk is a simple, web-based notes app.
 
-![Trunk Screenshot](http://i.imgur.com/4GCQ1pr.png)
+![Trunk Screenshot](http://i.imgur.com/hoKMox8.png)
 
 ## Installation
 
