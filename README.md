@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/timdavies/trunk.svg?branch=master)](https://travis-ci.org/timdavies/trunk)
 
-Trunk is a simple, web-based notes app. Want to try it first? Check out http://www.trytrunk.com/
+Trunk is a simple, web-based notes app that stores notes as Markdown. Want to try it out? Check out http://www.trytrunk.com/
 
 ![Trunk Screenshot](http://i.imgur.com/hoKMox8.png)
 
